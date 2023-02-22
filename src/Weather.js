@@ -5,20 +5,23 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
-      temperature: response.data.main.temp,
-      humidity: response.data.main.humidity,
+      ready: true,
+      temperature: response.data.temperature.current,
+      humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
-      city: response.data.name,
+      city: response.data.city,
+      feelsLike: response.data.temperature.feels_like,
+      iconDescription: response.data.condition.description,
+      iconUrl: response.data.condition.icon_url,
+      date: response.data.time,
     });
-    setReady(true);
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className='Weather'>
         <form>
@@ -42,14 +45,14 @@ export default function Weather() {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>Monday 13:43</li>
-          <li>{weatherData.description}</li>
+          <li>{weatherData.date}</li>
+          <li className='text-capitalize'>{weatherData.iconDescription}</li>
         </ul>
         <div className='row mt-3'>
           <div className='col-6'>
             <img
-              src='https://ssl.gstatic.com/onebox/weather/64/cloudy.png'
-              alt='Cloudy'
+              src={weatherData.iconUrl}
+              alt={weatherData.iconDescription}
             />
             <span className='temperature'>
               {Math.round(weatherData.temperature)}
@@ -58,7 +61,7 @@ export default function Weather() {
           </div>
           <div className='col-6'>
             <ul>
-              <li>Precipitation: 2%</li>
+              <li>Feels like: {Math.round(weatherData.feelsLike)}</li>
               <li>Humidity: {weatherData.humidity}</li>
               <li>Wind: {weatherData.wind} km/h</li>
             </ul>

@@ -13,7 +13,7 @@ export default function App() {
             This project was coded by{" "}
             <a
               href='https://linkedin.com/in/carolinamacdian'
-              class='link'
+              className='link'
               target='_blank'
               rel='noreferrer'>
               Carolina Macdian
@@ -21,7 +21,7 @@ export default function App() {
             , is{" "}
             <a
               href='https://github.com/CarolinaMacdian/weather-app-react'
-              class='link'
+              className='link'
               target='_blank'
               rel='noreferrer'>
               open-sourced on GitHub
@@ -29,7 +29,7 @@ export default function App() {
             and{" "}
             <a
               href='https://taupe-cheesecake-ec5e83.netlify.app/'
-              class='link'
+              className='link'
               target='_blank'
               rel='noreferrer'>
               hosted on Netlify
