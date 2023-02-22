@@ -33,8 +33,8 @@ export default function Weather() {
       <div className='row mt-3'>
         <div className='col-6'>
           <img
-            src='https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png'
-            alt='Mostly cloudy'
+            src='https://ssl.gstatic.com/onebox/weather/64/cloudy.png'
+            alt='Cloudy'
           />
           <span className='temperature'>6</span>
           <span className='unit'>ºC</span>
