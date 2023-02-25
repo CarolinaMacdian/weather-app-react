@@ -46,8 +46,18 @@
 .Weather .unit {
   color: rgb(33, 33, 33);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   position: relative;
   line-height: 1;
   top: -34px;
+}
+
+.Weather .unit a {
+  text-decoration: none;
+  color: black;
+}
+
+.Weather .unit a:hover {
+  text-decoration: none;
+  color: #006699;
 }
