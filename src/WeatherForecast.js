@@ -1,8 +1,9 @@
 /** @format */
 
 import React from "react";
+import WeatherForecast from "./WeatherForecast.css";
 
-export default function WeatherForecast() {
+export default function weatherForecast() {
   return (
     <div className='WeatherForecast'>
       <div className='row'>
