@@ -11,7 +11,7 @@ export default function WeatherForecast() {
         <div className='col'>Tue</div>
         <div className='col'>Wed</div>
         <div className='col'>Thu</div>
-        <div className='col'>Fry</div>
+        <div className='col'>Fri</div>
         <div className='col'>Sat</div>
       </div>
     </div>
