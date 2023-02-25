@@ -6,28 +6,27 @@ import axios from "axios";
 import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
-  let [loaded, setLoaded] = useState(false);
+  let [ready, setReady] = useState(false);
   let [forecast, setForecast] = useState(null);
 
   useEffect(() => {
-    setLoaded(false);
+    setReady(false);
   }, [props.coordinates]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
-    setLoaded(true);
+    setReady(true);
   }
-
-  function load() {
-    let apiKey = "466o652f33a4a9b0t59607ec49888d3f";
+  function callApi() {
+    const apiKey = "466o652f33a4a9b0t59607ec49888d3f";
     let longitude = props.coordinates.longitude;
     let latitude = props.coordinates.latitude;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat${latitude}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
   }
 
-  if (loaded) {
+  if (ready) {
     return (
       <div className='WeatherForecast'>
         <div className='row'>
@@ -48,7 +47,7 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    load();
+    callApi();
 
     return null;
   }
