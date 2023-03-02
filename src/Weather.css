@@ -2,18 +2,34 @@
 
 .currentWeather {
   font-family: arial, sans-serif;
-  border: 10px outset #f15d91;
+  border: 2px outset #fcbbc7;
   border-radius: 20px;
   padding: 16px;
-  color: rgb(135, 135, 135);
+  color: #53a8b6;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(-225deg, #2cd8d5 0%, #c5c1ff 56%, #ffbac3 100%);
+  font-weight: 600;
+}
+
+.currentWeather .btn-color {
+  border: 2px outset #fcbbc7;
+  border-radius: 10px;
+  background-color: #bbe4e9;
+  color: #5585b5;
+}
+
+.currentWeather .btn-color:hover {
+  border: 2px outset #fcbbc7;
+  border-radius: 10px;
+  background-color: #bbe4e9;
 }
 
 .currentWeather h1 {
   font-size: 24px;
-  font-weight: 100;
+  font-weight: 600;
   margin: 20px 0 0 0;
   line-height: 29px;
+  color: #006699;
 }
 
 .currentWeather ul {
@@ -36,7 +52,7 @@
 
 .currentWeather .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
+  color: #5585b5;
   font-size: 64px;
   line-height: 64px;
   margin-left: 5px;
@@ -45,7 +61,7 @@
 }
 
 .currentWeather .unit {
-  color: rgb(33, 33, 33);
+  color: #5585b5;
   font-size: 16px;
   font-weight: 600;
   position: relative;
@@ -55,10 +71,14 @@
 
 .currentWeather .unit a {
   text-decoration: none;
-  color: black;
+  color: #5585b5;
 }
 
 .currentWeather .unit a:hover {
   text-decoration: none;
   color: #006699;
+}
+
+.WeatherInfo .Description {
+  color: #5585b5;
 }
